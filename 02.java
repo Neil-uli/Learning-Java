@@ -2,59 +2,74 @@ import java.util.Scanner;
 
 class calculadora {
 	public static void main(String[] args) {
-		Integer a = 0;
-		Integer b = 0;
-		Scanner entradaDeTeclado = new Scanner(System.in);
 
-		// Suma
-		System.out.println("Ingresa a:");
-		a = entradaDeTeclado.nextInt();
-		System.out.println("ingresa b");
-		b = entradaDeTeclado.nextInt();
-		System.out.println("Resultado de a + b = " + suma(a, b));
+		Scanner reader = new Scanner(System.in);
+		System.out.println("Ingresa la operacion : \n 1 - Sumar\n 2- Restar\n 3-Multi\n4- Dividir");
+		int operacion = reader.nextInt();
 
-		// Resta
-		System.out.println("Ingresa a:");
-		a = entradaDeTeclado.nextInt();
-		System.out.println("ingresa b");
-		b = entradaDeTeclado.nextInt();
-		System.out.println("Resultado de a - b = " + resta(a, b));
+		int a, b;
 
-		// Multiplicacion
-		System.out.println("Ingresa a:");
-		Long ab = Long.valueOf(entradaDeTeclado.nextLong());
-		System.out.println("ingresa b");
-		Long bc = Long.valueOf(entradaDeTeclado.nextLong());
-		System.out.println("Resultado de ab * bc = " + multiplicacion(ab, bc));
+		switch (operacion) {
+			case 1:
+				System.out.println("Ingresa a:");
+				a = reader.nextInt();
+				System.out.println("ingresa b");
+				b = reader.nextInt();
+				suma(a, b);
+				break;
 
-		// Division
-		//System.out.println("Ingresa a:");
-		//a = entradaDeTeclado.nextLong();
-		//System.out.println("ingresa b");
-		//b = entradaDeTeclado.nextLong();
-		//System.out.println("Resultado de a / b = " + division(a, b));
+			case 2:
+				System.out.println("Ingresa a:");
+				a = reader.nextInt();
+				System.out.println("ingresa b");
+				b = reader.nextInt();
+				resta(a, b);
+				break;
+
+			case 3:
+				System.out.println("Ingresa a:");
+				a = reader.nextInt();
+				System.out.println("ingresa b");
+				b = reader.nextInt();
+				multiplicacion(a, b);
+				break;
+
+			case 4:
+				System.out.println("Ingresa a:");
+				a = reader.nextInt();
+				System.out.println("ingresa b");
+				b = reader.nextInt();
+				division(a, b);
+				break;
+			default:
+				System.out.println("Ingresa un valor valido");
+		}
 
 	}
 
 	public static int suma(int a, int b) {
-		Integer sum = 0;
+		int sum = 0;
 		sum = a + b;
+		System.out.println("El resultado es:" + sum);
 		return sum;
 	}
 
 	private static long resta(int a, int b) {
-		Integer resta = 0;
+		int resta = 0;
 		resta = a - b;
+		System.out.println("El resultado es:" + resta);
 		return resta;
 	}
 
-	private static long multiplicacion(Long a, Long b) {
-		Long multiplicacion = a * b;
+	private static long multiplicacion(int a, int b) {
+		int multiplicacion = a * b;
+		System.out.println("El resultado es:" + multiplicacion);
 		return multiplicacion;
 	}
 
-	//private static long division(long a,long b ){
-	//		Integer division = a/b;
-	//		return division;
-//}
+	private static int division(int a, int b) {
+		int division = a / b;
+		System.out.println("El resultado es:" + division);
+		return division;
+	}
 }
