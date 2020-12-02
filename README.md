@@ -1,1 +1,1 @@
-# Learning-Java
+# Exercices written in Java
